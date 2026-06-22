@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кошка-таролог</title>
+    <meta name="description" content="Белая пушистая кошка гадает на картах Таро и отвечает на вопросы." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero card-panel">
+        <div class="hero-copy">
+          <p class="eyebrow">Магический уголок</p>
+          <h1>Кошка Луна гадает на Таро</h1>
+          <p class="lead">
+            Белая и пушистая кошка раскладывает карты на розовом столе, читает знаки судьбы и
+            отвечает на твои вопросы.
+          </p>
+        </div>
+        <div class="cat-stage" aria-hidden="true">
+          <div class="spark spark-1"></div>
+          <div class="spark spark-2"></div>
+          <div class="deck">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="table"></div>
+          <div id="dealLayer" class="deal-layer"></div>
+          <div class="cards-preview">
+            <div class="preview-card preview-card-left"></div>
+            <div class="preview-card preview-card-center"></div>
+            <div class="preview-card preview-card-right"></div>
+          </div>
+          <div class="cat">
+            <div class="cat-paw"></div>
+            <div class="cat-tail"></div>
+            <div class="cat-body"></div>
+            <div class="cat-head">
+              <div class="ear ear-left"></div>
+              <div class="ear ear-right"></div>
+              <div class="eye eye-left"></div>
+              <div class="eye eye-right"></div>
+              <div class="nose"></div>
+              <div class="whisker whisker-left"></div>
+              <div class="whisker whisker-right"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="oracle card-panel">
+        <label class="question-label" for="question">Задай вопрос кошке</label>
+        <textarea id="question" rows="3" placeholder="Например: что меня ждёт в любви?" maxlength="180"></textarea>
+        <div class="actions">
+          <button id="shuffleButton" class="secondary-button" type="button">Перетасовать карты</button>
+          <button id="drawButton" class="primary-button" type="button">Спросить Луну</button>
+        </div>
+
+        <div class="reading-grid">
+          <article class="answer-panel">
+            <div class="answer-header">
+              <span class="badge">Ответ кошки</span>
+              <span id="readingTone" class="tone">Слушает карты</span>
+            </div>
+            <div id="readingIllustration" class="answer-illustration" aria-hidden="true"></div>
+            <p id="fortuneText" class="fortune-text">
+              Луна пока перемешивает карты лапками. Напиши вопрос и нажми кнопку, чтобы она открыла твое будущее.
+            </p>
+          </article>
+
+          <article class="cards-panel">
+            <div class="cards-header">
+              <span class="badge">Расклад</span>
+              <span class="tone">Прошлое, настоящее, будущее</span>
+            </div>
+            <div id="cards" class="cards"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
